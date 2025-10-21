@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "468d795c-5bfa-49f7-a3b9-5ca0ea9d8a58",
+		"name": "Urna-IEEE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40057381"
+	},
+	"item": [
+		{
+			"name": "Estado Eleicao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eleicao/estado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"estado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Admin) Abrir registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eleicao/admin/abrir-registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"admin",
+						"abrir-registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Admin) Adicionar candidato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Candidato B\"\r\n}\r\n\r\n//{\r\n//    \"success\": true,\r\n//    \"txHash\": \"0x866e1427d9dc966d2a791dad95aad8c4a3181bc6c13c4fd1bf8de9a9a289fbee\",\r\n//    \"message\": \"Candidato 'Candidato B' adicionado.\"\r\n//}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/eleicao/admin/adicionar-candidato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"admin",
+						"adicionar-candidato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Admin) Adicionar eleitores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"voterAddress\":\"ENDERECO_ELEITOR_A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/eleicao/admin/registrar-eleitor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"admin",
+						"registrar-eleitor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Admin) Fechar registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eleicao/admin/fechar-registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"admin",
+						"fechar-registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Admin) definir periodo votacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"startTime\":1761138421,\"endTime\":1761224821}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/eleicao/admin/definir-periodo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"admin",
+						"definir-periodo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(Admin) Abrir votação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eleicao/admin/abrir-votacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"admin",
+						"abrir-votacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Votar",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "(Admin) fechar-votacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eleicao/admin/fechar-votacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eleicao",
+						"admin",
+						"fechar-votacao"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -56,3 +56,33 @@ After setting the variable, you can run the deployment with the Sepolia network:
 npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
 ```
 # Redesign-backend-urna
+
+Esse projeto foi refeito pois o original estava com problemas na parte de configuração do hardhat 
+
+## Como rodar o projeto?
+
+ - Obs: é necessário node 22.10.0 ou uma versão LTS superior
+
+```shell
+# clonar o projeto
+git clone https://github.com/Projeto-Urna-IEEE/Redesign-backend-urna
+
+# baixar as dependências
+npm install
+
+# rodar o hardhat
+npx hardhat node
+
+# fazer o deploy (enquanto o projeto roda com o comando anterior)
+npx hardhat ignition deploy ./ignition/modules/DeployEleicao.ts --network localhost
+
+# rodar o projeto (novamente, enquanto o projeto hardhat esta rodando)
+npm run dev 
+```
+
+## Informações importantes
+
+ - Ao rodar o hardhat node, será possível testar diversas contas, porém a conta de admin do contrato
+ é a do .env (SERVER_PRIVATE_KEY), lembre disso ao testar o contrato
+
+- O arquivo de testes para rodar no postman está no Urna-IEEE.postman_collection.json
