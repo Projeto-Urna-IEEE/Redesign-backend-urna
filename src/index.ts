@@ -66,6 +66,31 @@ app.get("/eleicao/periodo", async (req, res) => {
   }
 });
 
+app.get("/eleicao/vencedor", async (req, res) => {
+  try {
+    const winner = await eleicaoContract.winner();
+    res.json({ success: true, id: Number(winner[0]), name: winner[1], voteCount: Number(winner[2]) });
+  } catch (error: any) {
+    console.error("ERRO DETALHADO:", error.message);
+    res
+      .status(500)
+      .json({ success: false, error: "Erro ao buscar vencedor da eleição." });
+  }
+});
+
+app.get("/eleicao/candidato", async (req, res) => {
+  try {
+    const id = Number(req.query.id);
+    const votes = await eleicaoContract.getVotesCount(id);
+    res.json({ success: true, voteCount: Number(votes) });
+  } catch (error: any) {
+    console.error("ERRO DETALHADO:", error.message);
+    res
+      .status(500)
+      .json({ success: false, error: "Erro ao buscar votos do candidato." });
+  }
+});
+
 // --- ROTAS DE ADMIN (POST) ---
 // Todas estas rotas exigem que a carteira do servidor seja a "owner"
 
